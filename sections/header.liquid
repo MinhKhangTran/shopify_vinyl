@@ -1,0 +1,67 @@
+<div x-cloak x-data="{ mobileMenuOpen: false }">
+    <div class="d-flex">
+        <a href="/">
+            {% render 'icon-logo' %}
+        </a>
+        <a href="/cart">
+            {% render 'icon-shopping-bag' %}
+        </a>
+    </div>
+    <div>
+        {% assign main_menu_linklist = section.settings.menu.links %}
+        {% for link in main_menu_linklist %}
+            {% case link.title %}
+                {% when "Home" %}
+                    <a href="{{ link.url }}" class="">
+                        {% render 'icon-home' %}
+                        {{ link.title }}</a>
+                {% when "Produkte" %}
+                    <a href="{{ link.url }}" class="">
+                        {% render 'icon-cd' %}
+                        {{ link.title }}</a>
+                {% when "Shops" %}
+                    <a href="{{ link.url }}" class="">
+                        {% render 'icon-location' %}
+                        {{ link.title }}</a>
+                {% when "Über uns" %}
+
+                    <a href="{{ link.url }}" class="">
+                        {% render 'icon-team' %}
+                        {{ link.title }}</a>
+                {% else %}
+            {% endcase %}
+        {% endfor %}
+    </div>
+    <div>
+        {% if shop.customer_accounts_enabled %}
+            {% if customer %}
+                <a href="{{ routes.account_url }}" class="text-base text-gray-500 hover:text-gray-900">account</a>
+                {{ 'Ausloggen'  | customer_logout_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
+            {% else %}
+                {{ 'Einloggen' | customer_login_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
+                {{ 'Registrieren' | customer_register_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
+            {% endif %}
+        {% endif %}
+    </div>
+
+</div>
+
+{% schema %}
+{
+    "name": "Header",
+    "settings": [
+        {
+            "type": "text",
+            "id": "mobile_menu_title",
+            "default": "Menu",
+            "label": "Mobile Menu Title"
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "default": "main-menu",
+            "label": "Heading Navigation Menu"
+        }
+    ]
+}
+{% endschema %}
