@@ -1,49 +1,75 @@
-<div x-cloak x-data="{ mobileMenuOpen: false }">
-    <div class="d-flex">
-        <a href="/">
+<header class="navbar navbar-light sticky-top bg-white flex-md-nowrap p-0">
+
+
+    <div class="col-md-4 col-lg-3 me-0 logo__wrapper d-flex align-items-center justify-content-md-between">
+
+        <a class="navbar-brand " href="/">
             {% render 'icon-logo' %}
         </a>
+
         <a href="/cart">
             {% render 'icon-shopping-bag' %}
+            <span>{{cart.item_count}}</span>
         </a>
     </div>
-    <div>
-        {% assign main_menu_linklist = section.settings.menu.links %}
-        {% for link in main_menu_linklist %}
-            {% case link.title %}
-                {% when "Home" %}
-                    <a href="{{ link.url }}" class="">
-                        {% render 'icon-home' %}
-                        {{ link.title }}</a>
-                {% when "Produkte" %}
-                    <a href="{{ link.url }}" class="">
-                        {% render 'icon-cd' %}
-                        {{ link.title }}</a>
-                {% when "Shops" %}
-                    <a href="{{ link.url }}" class="">
-                        {% render 'icon-location' %}
-                        {{ link.title }}</a>
-                {% when "Über uns" %}
 
-                    <a href="{{ link.url }}" class="">
-                        {% render 'icon-team' %}
-                        {{ link.title }}</a>
-                {% else %}
-            {% endcase %}
-        {% endfor %}
-    </div>
-    <div>
-        {% if shop.customer_accounts_enabled %}
-            {% if customer %}
-                <a href="{{ routes.account_url }}" class="text-base text-gray-500 hover:text-gray-900">account</a>
-                {{ 'Ausloggen'  | customer_logout_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
-            {% else %}
-                {{ 'Einloggen' | customer_login_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
-                {{ 'Registrieren' | customer_register_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
-            {% endif %}
-        {% endif %}
-    </div>
+    <button aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler position-absolute d-md-none collapsed" data-bs-target="#sidebarMenu" data-bs-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <input aria-label="Search" class="form-control mx-md-5 form-control-dark w-100 rounded-0 border-1 mt-3" placeholder="Suche" type="text">
 
+</header>
+<div class="row">
+    <nav class="col-md-4 col-lg-3 d-md-block bg-white sidebar collapse" id="sidebarMenu" x-cloak x-data="{ mobileMenuOpen: false }">
+
+        <ul>
+            {% assign main_menu_linklist = section.settings.menu.links %}
+            {% for link in main_menu_linklist %}
+                {% case link.title %}
+                    {% when "Home" %}
+                        <li>
+                            <a href="{{ link.url }}" class="">
+                                {% render 'icon-home' %}
+                                {{ link.title }}</a>
+                        </li>
+                    {% when "Produkte" %}
+                        <li>
+                            <a href="{{ link.url }}" class="">
+                                {% render 'icon-cd' %}
+                                {{ link.title }}</a>
+                        </li>
+                    {% when "Shops" %}
+                        <li>
+                            <a href="{{ link.url }}" class="">
+                                {% render 'icon-location' %}
+                                {{ link.title }}</a>
+                        </li>
+                    {% when "Über uns" %}
+
+
+                        <li>
+                            <a href="{{ link.url }}" class="">
+                                {% render 'icon-team' %}
+                                {{ link.title }}</a>
+                        </li>
+                    {% else %}
+                {% endcase %}
+            {% endfor %}
+        </ul>
+        <article class="d-flex h-85">
+            <div class="mt-auto">
+                {% if shop.customer_accounts_enabled %}
+                    {% if customer %}
+                        <a href="{{ routes.account_url }}" class="text-base text-gray-500 hover:text-gray-900">account</a>
+                        {{ 'Ausloggen'  | customer_logout_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
+                    {% else %}
+                        {{ 'Einloggen' | customer_login_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
+                        {{ 'Registrieren' | customer_register_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
+                    {% endif %}
+                {% endif %}
+            </div>
+        </article>
+    </nav>
 </div>
 
 {% schema %}
