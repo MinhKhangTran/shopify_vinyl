@@ -63,6 +63,7 @@ nav {
 .sidebar {
   position: fixed;
   top: 0;
+
   /* rtl:raw:
     right: 0;
     */
@@ -72,10 +73,20 @@ nav {
   z-index: 100; /* Behind the navbar */
   padding: 105px 0 0; /* Height of navbar */
 }
+input {
+  width: 90% !important;
+  margin-inline: auto !important;
+}
 
 @media (max-width: 767.98px) {
   .sidebar {
     top: 5rem;
+    padding: 2rem;
+  }
+  .logo__wrapper {
+    background: #f5f5f5 !important;
+    padding-top: 0rem !important;
+    padding-inline: 1rem !important;
   }
 }
 
@@ -87,8 +98,16 @@ nav {
 .mt-auto {
   margin-top: auto;
 }
-.h-85 {
-  height: 85%;
+.h-67 {
+  height: 67%;
+}
+ul {
+  padding-left: 0rem !important;
+}
+@media (min-width: 768px) {
+  ul {
+    padding-left: 2rem !important;
+  }
 }
 li {
   list-style: none;

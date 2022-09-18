@@ -1,0 +1,42 @@
+<img class="img-fluid" width="100%" src="{{ section.settings.image.src | img_url: '' }}" alt="{{ section.settings.title | escape }}">
+<h1>{{ section.settings.title }}</h1>
+<p>{{ section.settings.sub_text }}</p>
+<button>
+    {{ section.settings.btn_text }}
+</button>
+
+
+{% schema %}
+{
+    "name": "Hero",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default":"Auf der Suche nach gebrauchten Platten?"
+        },
+       {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+       },
+       {
+        "type": "text",
+        "id": "sub_text",
+        "label": "Sub_text",
+        "default":"Wir bieten Ihnen eine Vielfalt von gebrauchten Platten. Hier finden Sie was Ihnen gefällt"
+    }, {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Btn_text",
+        "default":"Jetzt einkaufen"
+    }
+    ],
+    "presets": [
+        {
+            "name": "Hero"
+        }
+    ]
+}
+{% endschema %}
