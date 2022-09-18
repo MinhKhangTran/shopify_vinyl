@@ -1,4 +1,6 @@
-<header class="navbar navbar-light sticky-top bg-white flex-md-nowrap p-0">
+<header class="navbar navbar-light sticky-top bg-white flex-md-nowrap p-0" style="
+background-color: #f5f5f5 !important;
+">
 
 
     <div class="col-md-4 col-lg-3 me-0 logo__wrapper d-flex align-items-center justify-content-md-between">
@@ -9,7 +11,7 @@
 
         <a href="/cart">
             {% render 'icon-shopping-bag' %}
-            <span>{{cart.item_count}}</span>
+            <span class="cart__item--count">{{cart.item_count}}</span>
         </a>
     </div>
 
@@ -27,28 +29,28 @@
             {% for link in main_menu_linklist %}
                 {% case link.title %}
                     {% when "Home" %}
-                        <li>
-                            <a href="{{ link.url }}" class="">
+                        <li class="{% if link.current %}active{% endif %}">
+                            <a href="{{ link.url }}" class="d-flex align-items-center gap-2">
                                 {% render 'icon-home' %}
                                 {{ link.title }}</a>
                         </li>
                     {% when "Produkte" %}
-                        <li>
-                            <a href="{{ link.url }}" class="">
+                        <li class="{% if link.current %}active{% endif %}">
+                            <a href="{{ link.url }}" class="d-flex align-items-center gap-2">
                                 {% render 'icon-cd' %}
                                 {{ link.title }}</a>
                         </li>
                     {% when "Shops" %}
-                        <li>
-                            <a href="{{ link.url }}" class="">
+                        <li class="{% if link.current %}active{% endif %}">
+                            <a href="{{ link.url }}" class="d-flex align-items-center gap-2">
                                 {% render 'icon-location' %}
                                 {{ link.title }}</a>
                         </li>
                     {% when "Über uns" %}
 
 
-                        <li>
-                            <a href="{{ link.url }}" class="">
+                        <li class="{% if link.current %}active{% endif %}">
+                            <a href="{{ link.url }}" class="d-flex align-items-center gap-2">
                                 {% render 'icon-team' %}
                                 {{ link.title }}</a>
                         </li>
