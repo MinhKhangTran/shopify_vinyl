@@ -1,9 +1,18 @@
-<img class="img-fluid" width="100%" src="{{ section.settings.image.src | img_url: '' }}" alt="{{ section.settings.title | escape }}">
-<h1>{{ section.settings.title }}</h1>
-<p>{{ section.settings.sub_text }}</p>
-<button>
-    {{ section.settings.btn_text }}
-</button>
+
+<section id="hero__section" aria-label="hero Abschnitt">
+    <div class="image__container">
+        <img class="img-fluid" width="100%" src="{{ section.settings.image.src | img_url: '' }}" alt="{{ section.settings.title | escape }}">
+        <div class="image__container--text">
+            <h1>{{ section.settings.title }}</h1>
+            <p>{{ section.settings.sub_text }}</p>
+            <button class="main__btn">
+                <a {% if section.settings.btn_url == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.btn_url }}"{% endif %}">
+                    {{ section.settings.btn_text }}
+                </a>
+            </button>
+        </div>
+    </div>
+</section>
 
 
 {% schema %}
@@ -25,12 +34,17 @@
         "type": "text",
         "id": "sub_text",
         "label": "Sub_text",
-        "default":"Wir bieten Ihnen eine Vielfalt von gebrauchten Platten. Hier finden Sie was Ihnen gefällt"
+        "default":"Wir bieten Ihnen eine Vielfalt von gebrauchten Platten. Hier finden Sie was Ihnen gefällt."
     }, {
         "type": "text",
         "id": "btn_text",
         "label": "Btn_text",
         "default":"Jetzt einkaufen"
+    },
+    {
+        "type":"url",
+        "id":"btn_url",
+        "label":"Btn_url"
     }
     ],
     "presets": [

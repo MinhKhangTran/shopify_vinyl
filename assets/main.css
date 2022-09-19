@@ -163,3 +163,86 @@ li {
   transform: translateX(100%);
   top: -50%;
 }
+
+/* ========================== HERO ========================== */
+
+#hero__section {
+  margin-top: 7rem;
+  margin-inline: 1.5rem;
+}
+.image__container {
+  position: relative;
+}
+.image__container--text {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  max-width: 550px;
+  width: 90%;
+  text-align: center;
+  margin-inline: auto;
+  transform: translate(-50%, -50%);
+}
+.image__container--text p {
+  margin-block: 1rem 1rem;
+  font-family: "Satoshi Variable";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+
+  color: #fff;
+}
+.image__container--text h1 {
+  font-family: "Satoshi Variable";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  color: #fff;
+}
+.main__btn {
+  background: linear-gradient(245.98deg, #ffc12e -3.67%, #ff9300 105.87%);
+  border-radius: 8px;
+  border: none;
+  padding: 8px 16px;
+  transition: 0.25s ease-in all;
+}
+
+.main__btn a {
+  transition: 0.25s ease-in all;
+}
+.main__btn:hover a {
+  color: white;
+}
+@media (min-width: 800px) {
+  #hero__section {
+    margin-top: 7rem;
+    margin-inline: 1.5rem;
+  }
+  .image__container--text {
+    top: 50%;
+    left: 0%;
+    max-width: 550px;
+    width: 90%;
+    margin-inline-start: 6rem;
+    text-align: left;
+    transform: translate(0%, 0%);
+  }
+  .image__container--text p {
+    margin-block: 1rem 1.5rem;
+    font-family: "Satoshi Variable";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    color: #fff;
+  }
+  .image__container--text h1 {
+    font-family: "Satoshi Variable";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2.5rem;
+    line-height: 2.375rem;
+    color: #fff;
+  }
+}
