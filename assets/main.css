@@ -205,7 +205,6 @@ li {
   border-radius: 8px;
   border: none;
   padding: 8px 16px;
-  transition: 0.25s ease-in all;
 }
 
 .main__btn a {
@@ -213,6 +212,24 @@ li {
 }
 .main__btn:hover a {
   color: white;
+}
+
+.second__btn {
+  border: 2px solid #ffc12e;
+  background-color: transparent;
+  border-radius: 8px;
+
+  padding: 8px 16px;
+  transition: 0.25s ease-in all;
+}
+.second__btn a {
+  transition: 0.25s ease-in all;
+}
+.second__btn:hover a {
+  color: white;
+}
+.second__btn:hover {
+  background-color: #ffc12e;
 }
 @media (min-width: 800px) {
   #hero__section {
@@ -244,5 +261,27 @@ li {
     font-size: 2.5rem;
     line-height: 2.375rem;
     color: #fff;
+  }
+}
+
+/* ========================== INTRO ========================== */
+
+#intro__section {
+  margin-inline: 1.5rem;
+  margin-block: 2.5rem;
+  max-width: 550px;
+  width: 90%;
+  text-align: center;
+  margin-inline: auto;
+}
+#intro__section button {
+  margin-top: 1rem;
+}
+@media (min-width: 800px) {
+  #intro__section {
+    margin-block: 3.8125rem;
+  }
+  #intro__section button {
+    margin-top: 1.5rem;
   }
 }
