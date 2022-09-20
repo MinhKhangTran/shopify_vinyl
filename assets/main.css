@@ -342,3 +342,26 @@ li {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ========================== Social Proof ========================== */
+
+#social__proof__section {
+  margin-inline: 1.5rem;
+  margin-bottom: 4rem;
+}
+.social__proof p {
+  width: 400px;
+  max-width: 90%;
+  margin-block: 0.5rem;
+}
+.social__proof h2 {
+  font-size: 1rem;
+  font-weight: 900;
+}
+.social__proof span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.social__proof:nth-child(2) {
+  margin-top: 1.5rem;
+}
