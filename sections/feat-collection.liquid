@@ -1,0 +1,71 @@
+<section aria-label="bestseller abschnitt" id="bestseller__section">
+    <h2>
+        {{section.settings.title}}
+    </h2>
+    <div class="card__wrapper">
+
+        {% for product in section.settings.featured_collection.products limit: section.settings.number_of_products_to_show %}
+            <div class="bg-white position-relative">
+                <img class="position-absolute" src="{{ product.featured_image | img_url: '150x150' }}" alt="{{ product.featured_image | img_url: 'medium' }}">
+                <div class="card__wrapper--header | d-flex align-items-center justify-content-between">
+                    <h3>
+                        {{product.title}}
+                    </h3>
+                    <p class="card__price">
+                        {{product.price | money}}
+                    </p>
+                </div>
+                <div class="card__wrapper--info | mt-2 mb-4">
+                    <div>
+                        {% for tag in product.tags %}
+                            <span class="card__tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <p>
+                        {{product.description}}
+                    </p>
+                </div>
+
+                <a class="main__btn" href="{{product.url}}">
+                    Erfahre mehr
+                    <span class="visually-hidden">über
+                        {{product.title}}</span>
+                </a>
+
+            </div>
+        {% endfor %}
+
+    </div>
+</section>
+
+{% schema %}
+
+{
+    "name": "Featured Collection",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Unsere Bestseller",
+            "label": "Title"
+        }, {
+            "type": "collection",
+            "id": "featured_collection",
+            "label": "Produkte"
+        }, {
+            "type": "range",
+            "id": "number_of_products_to_show",
+            "min": 3,
+            "max": 12,
+            "default": 3,
+            "label": "Anzahl der Produkte"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Featured Collection"
+        }
+    ]
+}
+
+{% endschema %} 

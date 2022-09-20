@@ -2,11 +2,11 @@
     <p>
         {{section.settings.title}}
     </p>
-    <button class="second__btn">
-        <a {% if section.settings.btn_url == blank %} role="link" aria-disabled="true" {% else %} href="{{ section.settings.btn_url }}" {% endif %} ">
-            {{ section.settings.btn_text }}
-        </a>
-    </button>
+
+    <a class="second__btn" {% if section.settings.btn_url == blank %} role="link" aria-disabled="true" {% else %} href="{{ section.settings.btn_url }}" {% endif %} ">
+        {{ section.settings.btn_text }}
+    </a>
+
 </section>
 
 {% schema %}

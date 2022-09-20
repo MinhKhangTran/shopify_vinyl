@@ -1,11 +1,25 @@
 {
   "sections": {
     "hero": {
-      "type": "hero"
+      "type": "hero",
+      "settings": {
+        "title": "Auf der Suche nach gebrauchten Platten?",
+        "image": "shopify://shop_images/hero_bg.png",
+        "sub_text": "Wir bieten Ihnen eine Vielfalt von gebrauchten Platten. Hier finden Sie was Ihnen gefällt.",
+        "btn_text": "Jetzt einkaufen"
+      }
     },
     "intro": {
-      "type": "intro"
+      "type": "intro",
+      "settings": {
+        "title": "Wir schätzen und respektieren jede Musikrrichtung. Das hört sich für Sie gut an? Kommen Sie uns gerne besuchen.",
+        "btn_text": "Jetzt einkaufen",
+        "btn_url": "shopify://collections/all"
+      }
+    },
+    "feat-collection": {
+      "type": "feat-collection"
     }
   },
-  "order": ["hero", "intro"]
+  "order": ["hero", "intro", "feat-collection"]
 }
