@@ -1,0 +1,51 @@
+<section aria-label="cta abschnitt" class="position-relative" id="cta__section">
+    <img class="position-absolute" src="{{ section.settings.image.src | img_url: '300x300' }}" alt="{{ section.settings.image.src | img_url: 'medium' }}">
+    <h2>
+        {{ section.settings.title }}
+    </h2>
+    <p>
+        {{section.settings.sub_text}}
+    </p>
+    <a {% if section.settings.btn_url == blank %} role="link" aria-disabled="true" {% else %} href="{{ section.settings.btn_url }}" {% endif %} " class=" main__btn">
+        {{ section.settings.btn_text }}
+    </a>
+</section>
+
+{% schema %}
+{
+    "name": "Cta",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default":"Kommen Sie persönlich vorbei und profitieren Sie."
+        },{
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+           },
+       {
+        "type": "text",
+        "id": "sub_text",
+        "label": "Sub_text",
+        "default":"Sie können bis zu 25% Rabatt für Ihren nächsten Einkauf in unseren Läden."
+    }, {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Btn_text",
+        "default":"Shop in meiner Nähe finden"
+    },
+    {
+        "type":"url",
+        "id":"btn_url",
+        "label":"Btn_url"
+    }
+    ],
+    "presets": [
+        {
+            "name": "Cta"
+        }
+    ]
+}
+{% endschema %}

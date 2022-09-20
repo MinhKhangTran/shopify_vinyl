@@ -30,12 +30,23 @@
       "type": "social-proof",
       "settings": {
       }
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {
+        "title": "Kommen Sie persönlich vorbei und profitieren Sie.",
+        "image": "shopify:\/\/shop_images\/vinyl_2_1_1.png",
+        "sub_text": "Sie können bis zu 25% Rabatt für Ihren nächsten Einkauf in unseren Läden.",
+        "btn_text": "Shop in meiner Nähe finden",
+        "btn_url": "shopify:\/\/blogs\/unsere-shops"
+      }
     }
   },
   "order": [
     "hero",
     "intro",
     "feat-collection",
-    "social-proof"
+    "social-proof",
+    "cta"
   ]
 }
