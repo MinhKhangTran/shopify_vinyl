@@ -435,3 +435,11 @@ footer li {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+/* ========================== Products Page ========================== */
+
+#product__section {
+  margin-inline: 1.5rem;
+  margin-bottom: 4rem;
+  margin-top: 7rem;
+}
