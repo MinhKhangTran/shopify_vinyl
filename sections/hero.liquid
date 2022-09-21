@@ -1,12 +1,11 @@
-
-<section id="hero__section" aria-label="hero Abschnitt">
+<section aria-label="hero Abschnitt" class="px-md-4" id="hero__section">
     <div class="image__container">
         <img class="img-fluid" width="100%" src="{{ section.settings.image.src | img_url: '' }}" alt="{{ section.settings.title | escape }}">
         <div class="image__container--text">
             <h1>{{ section.settings.title }}</h1>
             <p>{{ section.settings.sub_text }}</p>
             <button class="main__btn">
-                <a {% if section.settings.btn_url == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.btn_url }}"{% endif %}">
+                <a {% if section.settings.btn_url == blank %} role="link" aria-disabled="true" {% else %} href="{{ section.settings.btn_url }}" {% endif %} ">
                     {{ section.settings.btn_text }}
                 </a>
             </button>

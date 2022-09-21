@@ -369,7 +369,7 @@ li {
 /* ========================== CTA ========================== */
 
 #cta__section {
-  margin-inline: 1.5rem;
+  margin-inline: 3rem;
   margin-bottom: 4rem;
   background: linear-gradient(251.16deg, #4e4e4e 3.4%, #2e2e2e 95.34%);
   border-radius: 8px;
@@ -415,4 +415,23 @@ li {
     margin-top: 2rem;
     margin-bottom: 4rem;
   }
+}
+
+/* ========================== Footer ========================== */
+
+footer {
+  background-color: #333;
+  padding: 2rem;
+}
+footer ul {
+  gap: 2rem;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+footer small {
+  color: #999999;
+}
+footer li {
+  margin: 0 !important;
+  padding: 0 !important;
 }

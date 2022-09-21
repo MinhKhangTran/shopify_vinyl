@@ -4,10 +4,10 @@
       "type": "hero",
       "settings": {
         "title": "Auf der Suche nach gebrauchten Platten?",
-        "image": "shopify:\/\/shop_images\/hero_bg.png",
+        "image": "shopify://shop_images/hero_bg.png",
         "sub_text": "Wir bieten Ihnen eine Vielfalt von gebrauchten Platten. Hier finden Sie was Ihnen gefällt.",
         "btn_text": "Jetzt einkaufen",
-        "btn_url": "shopify:\/\/collections\/all"
+        "btn_url": "shopify://collections/all"
       }
     },
     "intro": {
@@ -15,7 +15,7 @@
       "settings": {
         "title": "Wir schätzen und respektieren jede Musikrrichtung. Das hört sich für Sie gut an? Kommen Sie uns gerne besuchen.",
         "btn_text": "Jetzt einkaufen",
-        "btn_url": "shopify:\/\/collections\/all"
+        "btn_url": "shopify://collections/all"
       }
     },
     "feat-collection": {
@@ -28,25 +28,21 @@
     },
     "social-proof": {
       "type": "social-proof",
-      "settings": {
-      }
+      "settings": {}
     },
     "cta": {
       "type": "cta",
       "settings": {
         "title": "Kommen Sie persönlich vorbei und profitieren Sie.",
-        "image": "shopify:\/\/shop_images\/vinyl_2_1_1.png",
+        "image": "shopify://shop_images/vinyl_2_1_1.png",
         "sub_text": "Sie können bis zu 25% Rabatt für Ihren nächsten Einkauf in unseren Läden.",
         "btn_text": "Shop in meiner Nähe finden",
-        "btn_url": "shopify:\/\/blogs\/unsere-shops"
+        "btn_url": "shopify://blogs/unsere-shops"
       }
+    },
+    "footer": {
+      "type": "footer"
     }
   },
-  "order": [
-    "hero",
-    "intro",
-    "feat-collection",
-    "social-proof",
-    "cta"
-  ]
+  "order": ["hero", "intro", "feat-collection", "social-proof", "cta", "footer"]
 }
