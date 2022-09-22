@@ -3,25 +3,32 @@
     "feat-collection": {
       "type": "feat-collection",
       "settings": {
-        "title": "Unsere Bestseller",
+        "title": "Unsere Produkte",
         "featured_collection": "frontpage",
-        "number_of_products_to_show": 3
+        "number_of_products_to_show": 5,
+        "produkt-filter": "produkt-filter"
       }
     },
-
     "cta": {
       "type": "cta",
       "settings": {
         "title": "Kommen Sie persönlich vorbei und profitieren Sie.",
-        "image": "shopify://shop_images/vinyl_2_1_1.png",
+        "image": "shopify:\/\/shop_images\/vinyl_2_1_1.png",
         "sub_text": "Sie können bis zu 25% Rabatt für Ihren nächsten Einkauf in unseren Läden.",
         "btn_text": "Shop in meiner Nähe finden",
-        "btn_url": "shopify://blogs/unsere-shops"
+        "btn_url": "shopify:\/\/blogs\/unsere-shops"
       }
     },
     "footer": {
-      "type": "footer"
+      "type": "footer",
+      "settings": {
+        "footer": "footer"
+      }
     }
   },
-  "order": ["feat-collection", "cta", "footer"]
+  "order": [
+    "feat-collection",
+    "cta",
+    "footer"
+  ]
 }
