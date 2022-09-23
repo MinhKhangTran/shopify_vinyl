@@ -443,3 +443,37 @@ footer li {
   margin-bottom: 4rem;
   margin-top: 7rem;
 }
+/* ========================== Single Product Page ========================== */
+#single__product--section {
+  margin-inline: 1.5rem;
+  margin-bottom: 4rem;
+  margin-top: 7rem;
+}
+#single__product--section img {
+  width: 65%;
+}
+#productSelect {
+  margin-top: 1.5rem;
+}
+.productQty {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.productQty input {
+  width: auto !important;
+  margin-inline: 0 !important;
+}
+.productDesc ol {
+  margin-top: 2rem;
+}
+.productDesc ol li {
+  list-style: decimal;
+  margin-block: 0.5rem;
+}
+
+/* ========================== Cart Page ========================== */
+#cart__section {
+  margin-inline: 1.5rem;
+  margin-bottom: 4rem;
+  margin-top: 7rem;
+}

@@ -1,5 +1,21 @@
 {
   "current": {
+    "checkout_header_image": "shopify:\/\/shop_images\/merchant-taking-sale-with-chip-and-swipe-reader.jpg",
+    "checkout_logo_position": "left",
+    "checkout_accent_color": "#ff9300",
+    "checkout_button_color": "#ff9300",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "mobile_menu_title": "Menu",
+          "menu": "main-menu"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
