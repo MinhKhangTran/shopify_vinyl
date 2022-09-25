@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "blog": {
+      "type": "blog",
+      "settings": {
+        "blog_read_more": "Erfahre mehr",
+        "number_of_blog_posts": 3,
+        "image": "shopify:\/\/shop_images\/Group_114.png"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "footer": "footer"
+      }
+    }
+  },
+  "order": [
+    "blog",
+    "footer"
+  ]
+}

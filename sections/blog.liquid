@@ -1,0 +1,55 @@
+<section aria-label="blog Abschnitt" class="px-md-4" id="blog__section">
+    <h1>Unsere Shops</h1>
+
+    <div class="main__wrapper | d-flex gap-4">
+        <div class="shop__wrapper">
+            {% paginate blog.articles by section.settings.number_of_blog_posts %}
+                {% for article in blog.articles %}
+                    <div class="shop__card | d-flex bg-white">
+                        <img class="" src="{{ article.image | img_url: 'medium' }}" alt="{{ article.image.alt }}">
+                        <div class="p-4 | bg-white">
+                            <h2 class="shop__card--title">{{ article.title }}</h2>
+                            <p>{{ article.excerpt | strip_html | truncatewords: 15 }}</p>
+                            <a href="{{ article.url }}" class="second__btn">{{ section.settings.blog_read_more }}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="mx-auto">
+                    {% render 'pagination', pagination: paginate %}
+                </div>
+            {% endpaginate %}
+        </div>
+        <div class="map__wrapper">
+            <img class="mx-auto w-100" src="{{ section.settings.image.src | img_url: '' }}" alt="{{ section.settings.title | escape }}">
+        </div>
+    </div>
+
+</section>
+
+{% schema %}
+{
+    "name": "Blog",
+    "settings": [
+        {
+            "type": "text",
+            "id": "blog_read_more",
+            "label": "Read more label",
+            "default": "Erfahre mehr"
+        },
+        {
+            "type": "range",
+            "id": "number_of_blog_posts",
+            "step": 1,
+            "min": 1,
+            "max": 6,
+            "label": "Blog posts per page",
+            "default": 3
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+           }
+    ]
+}
+{% endschema %}

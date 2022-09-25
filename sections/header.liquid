@@ -1,6 +1,6 @@
 <header class="navbar navbar-light fixed-top bg-white flex-md-nowrap p-0" style="
-                                                                                                                                background-color: #f5f5f5 !important;
-                                                                                                                                ">
+                                                                                                                                                                                                                                                                                                        background-color: #f5f5f5 !important;
+                                                                                                                                                                                                                                                                                                        ">
 
 
     <div class="col-md-4 col-lg-3 me-0 logo__wrapper d-flex align-items-center justify-content-md-between">
@@ -18,8 +18,17 @@
     <button aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler position-absolute d-md-none collapsed" data-bs-target="#sidebarMenu" data-bs-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <input aria-label="Search" class="form-control mx-md-5 form-control-dark rounded-0 border-1 mt-3" placeholder="Suche" type="text">
 
+    {% if page_title contains "Search" %}
+        <div></div>
+    {% else %}
+        <form action="{{ routes.search_url }}" method="get" class="form-control mx-md-5 mt-3">
+            <input aria-label="Search" class="border-none" name="q" placeholder="Suche" type="search">
+            <button class="second__btn" type="submit">
+                {% render 'icon-search' %}
+            </button>
+        </form>
+    {% endif %}
 </header>
 <div class="row">
     <nav class="col-md-4 col-lg-3 d-md-block bg-white sidebar collapse" id="sidebarMenu" x-cloak x-data="{ mobileMenuOpen: false }">

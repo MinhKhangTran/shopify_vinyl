@@ -1,0 +1,68 @@
+<div class="px-md-4 search__section">
+    {% paginate search.results by 10 %}
+        <h1 class="my-4 text-xl text-center">Search Results</h1>
+
+        <div class="flex items-center justify-center">
+            <form action="{{ routes.search_url }}" method="get" class="">
+                <input type="search" name="q" placeholder="Search" value="{{ search.terms | escape }}" class="px-4 py-2 border-none w-80">
+
+                <button class="second__btn" type="submit">Search</button>
+            </form>
+        </div>
+        {% if search.performed %}
+            {% if search.results.size > 0 %}
+                <div class="max-w-6xl mx-auto">
+                    <p class="my-10 text-center text-gray-500">{{ search.results.size }}
+                        results for the search term
+                        {{ search.terms | escape }}</p>
+                    <div class="card__wrapper">
+                        {% for item in search.results %}
+                            {% case item.object_type %}
+                                {% when 'product' %}
+                                    <div class="bg-white position-relative">
+                                        <img class="position-absolute" src="{{ item.featured_image | img_url: '150x150' }}" alt="{{ item.featured_image | img_url: 'medium' }}">
+                                        <div class="card__wrapper--header | d-flex align-items-center justify-content-between">
+                                            <h3>
+                                                {{item.title}}
+                                            </h3>
+                                            <p class="card__price">
+                                                {{item.price | money}}
+                                            </p>
+                                        </div>
+                                        <div class="card__wrapper--info | mt-2 mb-4">
+                                            <div>
+                                                {% for tag in item.tags %}
+                                                    <span class="card__tag">{{ tag }}</span>
+                                                {% endfor %}
+                                            </div>
+                                            <p>
+                                                {{item.description | slice: 0, 80 }}
+                                            </p>
+                                        </div>
+
+                                        <a class="main__btn" href="{{item.url}}">
+                                            Erfahre mehr
+                                            <span class="visually-hidden">über
+                                                {{item.title}}</span>
+                                        </a>
+
+                                    </div>
+                                {% else %}
+
+                            {% endcase %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+            {% else %}
+                <div class="my-4 text-center">
+                    <p>No results found for the search term:
+                        {{ search.terms | escape }}. Try to use a different keyword</p>
+                </div>
+            {% endif %}
+        {% endif %}
+
+
+        {% render 'pagination', pagination: paginate %}
+    {% endpaginate %}
+</div>
