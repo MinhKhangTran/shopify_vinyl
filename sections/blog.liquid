@@ -5,8 +5,8 @@
         <div class="shop__wrapper">
             {% paginate blog.articles by section.settings.number_of_blog_posts %}
                 {% for article in blog.articles %}
-                    <div class="shop__card | d-flex bg-white">
-                        <img class="" src="{{ article.image | img_url: 'medium' }}" alt="{{ article.image.alt }}">
+                    <div class="shop__card | d-flex flex-column flex-lg-row bg-white">
+                        <img class="img-fluid object-cover" src="{{ article.image | img_url: 'medium' }}" alt="{{ article.image.alt }}">
                         <div class="p-4 | bg-white">
                             <h2 class="shop__card--title">{{ article.title }}</h2>
                             <p>{{ article.excerpt | strip_html | truncatewords: 15 }}</p>
@@ -19,7 +19,7 @@
                 </div>
             {% endpaginate %}
         </div>
-        <div class="map__wrapper">
+        <div class="map__wrapper d-none d-lg-block">
             <img class="mx-auto w-100" src="{{ section.settings.image.src | img_url: '' }}" alt="{{ section.settings.title | escape }}">
         </div>
     </div>

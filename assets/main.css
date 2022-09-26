@@ -168,7 +168,7 @@ li {
 
 #hero__section {
   margin-top: 7rem;
-  margin-inline: 1.5rem;
+  margin-inline: 0rem;
 }
 .image__container {
   position: relative;
@@ -224,7 +224,7 @@ li {
   border: 2px solid #ffc12e;
   background-color: transparent;
   border-radius: 8px;
-
+  color: black;
   padding: 8px 16px;
   transition: 0.25s ease-in all;
 }
@@ -369,7 +369,7 @@ li {
 /* ========================== CTA ========================== */
 
 #cta__section {
-  margin-inline: 3rem;
+  margin-inline: 1.5rem;
   margin-bottom: 4rem;
   background: linear-gradient(251.16deg, #4e4e4e 3.4%, #2e2e2e 95.34%);
   border-radius: 8px;
@@ -402,6 +402,9 @@ li {
 }
 
 @media (min-width: 1000px) {
+  #cta__section {
+    margin-inline: 3rem;
+  }
   #cta__section img {
     top: 50%;
     right: 10%;
@@ -491,7 +494,7 @@ footer li {
 .shop__card--title {
   font-weight: 900;
   font-size: 1rem;
-  font-family: "Satoshi Variable";
+  font-family: "Satoshi Regular";
 }
 .shop__wrapper {
   flex: 2;
@@ -499,6 +502,10 @@ footer li {
 .map__wrapper {
   flex: 1;
   margin-top: 2rem;
+}
+.object-cover {
+  object-fit: cover;
+  height: 210px !important;
 }
 
 /* ========================== Shop Page ========================== */
@@ -509,8 +516,13 @@ footer li {
   margin-top: 7rem;
 }
 
+/* ========================== Search ========================== */
 .form-control {
   border: none !important;
   background: #f5f5f5 !important;
   padding: 0 !important;
+}
+.search__form {
+  max-width: 90%;
+  margin-inline: auto;
 }

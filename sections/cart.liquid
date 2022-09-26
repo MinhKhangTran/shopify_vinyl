@@ -31,7 +31,7 @@
                                     <td class="d-flex flex-column justify-content-center px-2 py-4">
                                         <a href="{{ item.url }}" class="my-1">{{ item.product.title | truncatewords: 5}}</a>
 
-                                        <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0" class="my-1 text-danger">remove</a>
+                                        <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0" class="my-1 text-danger">Entfernen</a>
                                     </td>
                                     <td class="px-2 py-4">
                                         <input type="number" name="updates[]" id="updates_{{ forloop.index }}" value="{{ item.quantity }}" min="0" class="w-20 p-2 border">
